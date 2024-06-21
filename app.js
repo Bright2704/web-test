@@ -22,3 +22,15 @@ function minutes2hour(){
     console.log(result)
     document.getElementById("result").innerHTML = str
 }
+
+const express = require('express');
+const app = express();
+const port = 8080; // Choose a port number
+
+app.get('/', (req, res) => {
+    res.send('welcome to my app service');
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
