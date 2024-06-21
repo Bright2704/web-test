@@ -1,11 +1,12 @@
 {
-  "name": "catcat",
+  "name": "simpleproject",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "![image](https://user-images.githubusercontent.com/46419278/161116090-c24b0b1b-5928-4400-af80-4228ec7ba9ba.png) \"# Convert-Time-WebApp2\"  \"# Convert-Time-WebApp2\"",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"No tests specified\""
+    "test": "echo \"No tests specified\" && exit 0",
+    "dev": "live-server"
   },
   "keywords": [],
   "author": "",
