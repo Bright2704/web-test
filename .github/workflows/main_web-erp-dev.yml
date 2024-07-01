@@ -61,11 +61,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_57311D8BF4D24BAB9CEC97ABA01D6F3D }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_62E8055F37AA46E78F53A7B4E0E298C5 }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
+        uses: azure/webapps-deploy@v2
         with:
-          app-name: 'web-erp-dev'
+          app-name: 'api-erp-dev'
           slot-name: 'Production'
           package: .
+          startup-command: 'npm start'
           
