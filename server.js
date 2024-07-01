@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5001; // Use the PORT environment variable if it's available
+const port = process.env.PORT || 8080; // Use the PORT environment variable if it's available
 const cors = require('cors');
 
 app.use(cors());
