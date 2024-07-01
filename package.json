@@ -6,12 +6,16 @@
   "scripts": {
     "start": "node app.js",
     "dev": "live-server --port=8000",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "build": "babel public --out-dir dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "live-server": "^1.2.2"
   },
   "dependencies": {
