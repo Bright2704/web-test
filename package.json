@@ -1,27 +1,12 @@
 {
-  "name": "simpleproject",
+  "name": "web-test",
   "version": "1.0.0",
-  "description": "# Convert-Time-WebApp2",
-  "main": "server.js",
+  "description": "A simple web project.",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "live-server --port=8000",
-    "test": "echo 'No tests specified' && exit 0",
-    "build": "npm install && npm run start",
-    "audit": "npm audit fix --force"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.24.7",
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
-    "live-server": "^1.2.2"
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.19.2"
   }
 }
