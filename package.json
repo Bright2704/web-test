@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npm run dev",
+    "dev": "live-server --port=8000",
     "test": "echo \"No tests specified\" && exit 0",
     "build": "echo 'Build steps here' && npm run start",
     "build:azure": "npm run build"
