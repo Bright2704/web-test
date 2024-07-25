@@ -1,28 +1,15 @@
 {
-  "name": "simpleproject",
+  "name": "web-erp-dev",
   "version": "1.0.0",
   "description": "![image](https://user-images.githubusercontent.com/46419278/161116090-c24b0b1b-5928-4400-af80-4228ec7ba9ba.png) \"# Convert-Time-WebApp2\"  \"# Convert-Time-WebApp2\"",
   "main": "app.js",
+  "devDependencies": {},
   "scripts": {
-    "start": "npm run dev",
-    "dev": "live-server --port=8000",
-    "test": "echo \"No tests specified\" && exit 0",
-    "build": "echo 'Build steps here' && npm run start",
-    "build:azure": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "npm run build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.24.7",
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
-    "live-server": "^1.2.2" 
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "pg": "^8.12.0"
-  }
+  "license": "ISC"
 }
