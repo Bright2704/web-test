@@ -1,13 +1,19 @@
 {
   "name": "web-erp-dev",
   "version": "1.0.0",
-  "description": "![image](https://user-images.githubusercontent.com/46419278/161116090-c24b0b1b-5928-4400-af80-4228ec7ba9ba.png) \"# Convert-Time-WebApp2\"  \"# Convert-Time-WebApp2\"",
+  "description": "# Convert-Time-WebApp2",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
+    "live-server": "^1.2.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "start": "node server.js",
-    "build": "npm run build"
+    "build": "babel src -d dist",
+    "dev": "live-server --port=8000 --open=public/index.html"
   },
   "keywords": [],
   "author": "",
