@@ -4,7 +4,9 @@
   "description": "A simple web project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "build": "echo 'Build steps here' && npm run start",
+    "build:azure": "npm run build"
   },
   "dependencies": {
     "express": "^4.19.2"
