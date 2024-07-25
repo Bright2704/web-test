@@ -1,6 +1,6 @@
 document.getElementById('connectButton').addEventListener('click', function(event) {
     // Fetch data from backend
-    fetch('https://api-erp-dev.azurewebsites.net/api/hello') // Change this URL to match your backend endpoint
+    fetch('https://api-test-bbbpcye6e7e6dhba.southeastasia-01.azurewebsites.net/api/hello') // Change this URL to match your backend endpoint
         .then(response => response.text())
         .then(data => {
             const responseText = document.getElementById('responseText');
