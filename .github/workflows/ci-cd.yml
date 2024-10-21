@@ -40,13 +40,16 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Setup SSH
+      - name: Deploy to Server
+        env:
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}  
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}  
+          SERVER_IP: ${{ secrets.SERVER_IP }}       
+          DOCKER_IMAGE: ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-      - name: Deploy to server
-        run: |
-          echo "Deploying to server..."
-          ssh -o StrictHostKeyChecking=no root@119.59.103.209 "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }} && docker stop test-web || true && docker rm test-web || true && docker run -d --name test-web ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }}"
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USERNAME@$SERVER_IP "
+            docker pull $DOCKER_IMAGE &&
+            docker stop test-web || true &&
+            docker rm test-web || true &&
+            docker run -d --name test-web $DOCKER_IMAGE
+          "
