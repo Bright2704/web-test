@@ -26,14 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Scan with SonarQube
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # รหัสผ่านหรือ token สำหรับการเข้าถึง SonarQube
+      - name: Run Sonar Scanner using Docker Compose
         run: |
-          sonar-scanner -Dsonar.projectKey=test-erp \
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=http://host.docker.internal:9000 \
-                        -Dsonar.login=$SONAR_TOKEN
+          docker-compose -f docker-compose.scanner.yaml up --abort-on-container-exit
 ################################
 
       - name: Login to Docker Hub
