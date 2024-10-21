@@ -49,7 +49,4 @@ jobs:
       - name: Deploy to server
         run: |
           echo "Deploying to server..."
-          ssh -o StrictHostKeyChecking=no root@119.59.103.209
-          "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }} && 
-          docker stop test-web || true && docker rm test-web || true && 
-          docker run -d --name test-web ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }}"
+          ssh -o StrictHostKeyChecking=no root@119.59.103.209 "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }} && docker stop test-web || true && docker rm test-web || true && docker run -d --name test-web ${{ secrets.DOCKER_HUB_USERNAME }}/test:${{ github.run_number }}"
