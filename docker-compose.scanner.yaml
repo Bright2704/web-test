@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  sonar-scanner:
+    container_name:  sonar-scanner
+    platform: linux/amd64
+    image: sonarsource/sonar-scanner-cli:latest
+    volumes:
+      - .:/usr/src
+    working_dir: /usr/src
+    command: sonar-scanner
+    networks:
+      - sonarqube-networks
+
+
+networks:
+  sonarqube-networks:
+    driver: bridge
+    

@@ -3,19 +3,27 @@
   "version": "1.0.0",
   "description": "# Convert-Time-WebApp2",
   "main": "app.js",
+  "type": "module",
   "devDependencies": {
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.24.8",
-    "live-server": "^1.2.2"
+    "chai": "^5.1.1",
+    "chai-http": "^5.1.1",
+    "live-server": "^1.2.2",
+    "mocha": "^10.7.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "mocha --exit",
     "start": "node server.js",
     "build": "babel src -d dist",
-    "dev": "live-server --port=8000 --open=public/index.html"
+    "dev": "live-server --port=8000 --open=public/index.html",
+    "scan": "docker-compose -f docker-compose.scanner.yaml up -d "
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
 }
